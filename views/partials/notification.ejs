@@ -1,0 +1,26 @@
+<div class="text-center">
+    <!-- BEGIN: Notification Content -->
+    <% if (messages.success) { %>
+        <div id="success-notification-content" class="py-3 pl-5 pr-14 bg-white border border-slate-200/60 rounded-lg shadow-xl dark:bg-darkmode-600 dark:text-slate-300 dark:border-darkmode-600 flex">
+            <i data-tw-merge data-lucide="check-circle" class="stroke-1.5 w-5 h-5 text-success"></i>
+            <div class="ml-7 mr-4">
+                <div class="font-medium">Success!</div>
+                <div class="mt-1 text-slate-500">
+                    <%= messages.success %>
+                </div>
+            </div>
+        </div>
+    <% } else if (messages.error) { %>
+        <div id="error-notification-content" class="py-3 pl-5 pr-14 bg-white border border-red-500 rounded-lg shadow-xl dark:bg-darkmode-600 dark:text-slate-300 dark:border-darkmode-600 flex">
+            <i data-tw-merge data-lucide="x-circle" class="stroke-1.5 w-5 h-5 text-red-500"></i>
+            <div class="ml-7 mr-4">
+                <div class="font-medium">Error!</div>
+                <div class="mt-1 text-slate-500">
+                    <%= messages.error %>
+                </div>
+            </div>
+        </div>
+    <% } %>
+    <!-- Add similar blocks for other message types (e.g., warning, info) -->
+    <!-- END: Notification Content -->
+</div>

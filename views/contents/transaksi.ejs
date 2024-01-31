@@ -1,0 +1,318 @@
+<h2 class="intro-y text-lg font-medium mt-10">
+    Jenis Paket
+</h2>
+<div class="grid grid-cols-12 gap-6 mt-5">
+    <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
+        <button class="btn btn-primary shadow-md mr-2" data-tw-toggle="modal"
+            data-tw-target="#tambah-paket-modal">Tambah Data Paket </button>
+        <div class="hidden md:block mx-auto text-slate-500"></div>
+        <div class="w-full sm:w-auto mt-3 sm:mt-0 sm:ml-auto md:ml-0">
+            <div class="w-56 relative text-slate-500">
+                <input type="text" class="form-control w-56 box pr-10" placeholder="Cari data...">
+                <i class="w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0" data-lucide="search"></i>
+            </div>
+        </div>
+    </div>
+    <!-- BEGIN: Data List -->
+    <div class="intro-y col-span-12 overflow-auto lg:overflow-visible">
+        <table class="table table-report -mt-2">
+            <thead>
+                <tr>
+                    <th class="whitespace-nowrap">UNIT</th>
+                    <th class="whitespace-nowrap">NAMA PAKET</th>
+                    <th class="text-center whitespace-nowrap">BIAYA PERJAM</th>
+                    <th class="text-center whitespace-nowrap">DURASI</th>
+                    <th class="text-center whitespace-nowrap">TIPE PS</th>
+                    <th class="text-center whitespace-nowrap">ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="intro-x">
+                    <td>
+                        <a href="" class="font-medium whitespace-nowrap">1</a>
+                    </td>
+                    <td>
+                        <a href="" class="font-medium whitespace-nowrap">Paket 1</a>
+                    </td>
+                    <td class="text-center">50.000</td>
+                    <td class="text-center">
+                        <a href="" class="font-medium whitespace-nowrap">1 Jam</a>
+                    </td>
+                    <td class="w-40">
+                        <div class="flex items-center justify-center font-medium"> PS 5 </div>
+                    </td>
+                    <td class="table-report__action w-56">
+                        <div class="flex justify-center items-center">
+                            <a class="flex items-center mr-3" href="javascript:;" data-tw-toggle="modal"
+                                data-tw-target="#edit-paket-modal"> <i data-lucide="check-square"
+                                    class="w-4 h-4 mr-1"></i> Edit </a>
+                            <a class="flex items-center text-danger" href="javascript:;"
+                                data-tw-toggle="modal" data-tw-target="#delete-confirmation-modal"> <i
+                                    data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="intro-x">
+                    <td>
+                        <a href="" class="font-medium whitespace-nowrap">2</a>
+                    </td>
+                    <td>
+                        <a href="" class="font-medium whitespace-nowrap">Paket 2</a>
+                    </td>
+                    <td class="text-center">50.000</td>
+                    <td class="text-center">
+                        <a href="" class="font-medium whitespace-nowrap">2 Jam</a>
+                    </td>
+                    <td class="w-40">
+                        <div class="flex items-center justify-center font-medium"> PS 5 </div>
+                    </td>
+                    <td class="table-report__action w-56">
+                        <div class="flex justify-center items-center">
+                            <a class="flex items-center mr-3" href="javascript:;" data-tw-toggle="modal"
+                                data-tw-target="#edit-paket-modal"> <i data-lucide="check-square"
+                                    class="w-4 h-4 mr-1"></i> Edit </a>
+                            <a class="flex items-center text-danger" href="javascript:;"
+                                data-tw-toggle="modal" data-tw-target="#delete-confirmation-modal"> <i
+                                    data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="intro-x">
+                    <td>
+                        <a href="" class="font-medium whitespace-nowrap">3</a>
+                    </td>
+                    <td>
+                        <a href="" class="font-medium whitespace-nowrap">Paket 3</a>
+                    </td>
+                    <td class="text-center">50.000</td>
+                    <td class="text-center">
+                        <a href="" class="font-medium whitespace-nowrap">3 Jam</a>
+                    </td>
+                    <td class="w-40">
+                        <div class="flex items-center justify-center font-medium"> PS 5 </div>
+                    </td>
+                    <td class="table-report__action w-56">
+                        <div class="flex justify-center items-center">
+                            <a class="flex items-center mr-3" href="javascript:;" data-tw-toggle="modal"
+                                data-tw-target="#edit-paket-modal"> <i data-lucide="check-square"
+                                    class="w-4 h-4 mr-1"></i> Edit </a>
+                            <a class="flex items-center text-danger" href="javascript:;"
+                                data-tw-toggle="modal" data-tw-target="#delete-confirmation-modal"> <i
+                                    data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="intro-x">
+                    <td>
+                        <a href="" class="font-medium whitespace-nowrap">4</a>
+                    </td>
+                    <td>
+                        <a href="" class="font-medium whitespace-nowrap">Paket 4</a>
+                    </td>
+                    <td class="text-center">50.000</td>
+                    <td class="text-center">
+                        <a href="" class="font-medium whitespace-nowrap">4 Jam</a>
+                    </td>
+                    <td class="w-40">
+                        <div class="flex items-center justify-center font-medium"> PS 5 </div>
+                    </td>
+                    <td class="table-report__action w-56">
+                        <div class="flex justify-center items-center">
+                            <a class="flex items-center mr-3" href="javascript:;" data-tw-toggle="modal"
+                                data-tw-target="#edit-paket-modal"> <i data-lucide="check-square"
+                                    class="w-4 h-4 mr-1"></i> Edit </a>
+                            <a class="flex items-center text-danger" href="javascript:;"
+                                data-tw-toggle="modal" data-tw-target="#delete-confirmation-modal"> <i
+                                    data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="intro-x">
+                    <td>
+                        <a href="" class="font-medium whitespace-nowrap">5</a>
+                    </td>
+                    <td>
+                        <a href="" class="font-medium whitespace-nowrap">Paket 5</a>
+                    </td>
+                    <td class="text-center">50.000</td>
+                    <td class="text-center">
+                        <a href="" class="font-medium whitespace-nowrap">5 Jam</a>
+                    </td>
+                    <td class="w-40">
+                        <div class="flex items-center justify-center font-medium"> PS 5 </div>
+                    </td>
+                    <td class="table-report__action w-56">
+                        <div class="flex justify-center items-center">
+                            <a class="flex items-center mr-3" href="javascript:;"> <i
+                                    data-lucide="check-square" class="w-4 h-4 mr-1" data-tw-toggle="modal"
+                                    data-tw-target="#edit-paket-modal"></i> Edit </a>
+                            <a class="flex items-center text-danger" href="javascript:;"
+                                data-tw-toggle="modal" data-tw-target="#delete-confirmation-modal"> <i
+                                    data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- END: Data List -->
+    <!-- BEGIN: Pagination -->
+    <div class="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center mb-10">
+        <nav class="w-full sm:w-auto sm:mr-auto">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="#"> <i class="w-4 h-4" data-lucide="chevrons-left"></i>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#"> <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                    </a>
+                </li>
+                <li class="page-item"> <a class="page-link" href="#">...</a> </li>
+                <li class="page-item active"> <a class="page-link" href="#">1</a> </li>
+                <li class="page-item"> <a class="page-link" href="#">2</a> </li>
+                <li class="page-item"> <a class="page-link" href="#">3</a> </li>
+                <li class="page-item"> <a class="page-link" href="#">...</a> </li>
+                <li class="page-item">
+                    <a class="page-link" href="#"> <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#"> <i class="w-4 h-4" data-lucide="chevrons-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <select class="w-20 form-select box mt-3 sm:mt-0">
+            <option>10</option>
+            <option>25</option>
+            <option>35</option>
+            <option>50</option>
+        </select>
+    </div>
+    <!-- END: Pagination -->
+</div>
+<!-- BEGIN: Delete Confirmation Modal -->
+<div id="delete-confirmation-modal" class="modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body p-0">
+                <div class="p-5 text-center">
+                    <i data-lucide="x-circle" class="w-16 h-16 text-danger mx-auto mt-3"></i>
+                    <div class="text-3xl mt-5">Are you sure?</div>
+                    <div class="text-slate-500 mt-2">
+                        Do you really want to delete these records?
+                        <br>
+                        This process cannot be undone.
+                    </div>
+                </div>
+                <div class="px-5 pb-8 text-center">
+                    <button type="button" data-tw-dismiss="modal"
+                        class="btn btn-outline-secondary w-24 mr-1">Cancel</button>
+                    <button type="button" class="btn btn-danger w-24">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- BEGIN: Tambah Paket Modal -->
+<div id="tambah-paket-modal" class="modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body p-0">
+                <form class="validate-form m-5 pt-5">
+                    <div class="input-form">
+                        <label for="ps" class="form-label w-full flex flex-col sm:flex-row">
+                            Tipe PS</label>
+                        <input id="ps" type="text" name="ps" class="form-control"
+                            placeholder="Masukkan Tipe PS..." minlength="2" required>
+                    </div>
+                    <div class="input-form mt-3">
+                        <label for="namapaket" class="form-label w-full flex flex-col sm:flex-row">
+                            Nama Paket </label>
+                        <input id="namapaket" type="text" name="namapaket" class="form-control"
+                            placeholder="Masukkan Nama Paket..." required>
+                    </div>
+                    <div class="input-form mt-3">
+                        <label for="biaya" class="form-label w-full flex flex-col sm:flex-row">
+                            Biaya Perjam </label>
+                        <input id="biaya" type="number" name="biaya" class="form-control"
+                            placeholder="Masukkan Nominal Biaya..." minlength="6" required>
+                    </div>
+                    <div class="input-form mt-3">
+                        <label for="durasi" class="form-label w-full flex flex-col sm:flex-row">
+                            Durasi </label>
+                        <input id="durasi" type="number" name="durasi" class="form-control"
+                            placeholder="Masukkan Durasi..." required>
+                    </div>
+                    <div class="input-form mt-3">
+                        <label for="durasi" class="form-label">Status</label>
+                        <select data-placeholder="Pilih status..." class="tom-select w-full" id="durasi"
+                            name="durasi" multiple>
+                            <option value="active">Active</option>
+                            <option value="pending">Pending</option>
+                        </select>
+                    </div>
+                </form>
+                <div class="px-5 pb-8 text-center">
+                    <button type="button" data-tw-dismiss="modal"
+                        class="btn btn-outline-secondary w-24 mr-1">Batal</button>
+                    <button type="button" class="btn btn-primary w-24">Simpan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END: Tambah Paket Modal -->
+<!-- BEGIN: Edit Paket Modal -->
+<div id="edit-paket-modal" class="modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body p-0">
+                <form class="validate-form m-5 pt-5">
+                    <div class="input-form">
+                        <label for="ps" class="form-label w-full flex flex-col sm:flex-row">
+                            Tipe PS</label>
+                        <input id="ps" type="text" name="ps" class="form-control"
+                            placeholder="Masukkan Tipe PS..." minlength="2" required>
+                    </div>
+                    <div class="input-form mt-3">
+                        <label for="namapaket" class="form-label w-full flex flex-col sm:flex-row">
+                            Nama Paket </label>
+                        <input id="namapaket" type="text" name="namapaket" class="form-control"
+                            placeholder="Masukkan Nama Paket..." required>
+                    </div>
+                    <div class="input-form mt-3">
+                        <label for="biaya" class="form-label w-full flex flex-col sm:flex-row">
+                            Biaya Perjam </label>
+                        <input id="biaya" type="number" name="biaya" class="form-control"
+                            placeholder="Masukkan Nominal Biaya..." minlength="6" required>
+                    </div>
+                    <div class="input-form mt-3">
+                        <label for="durasi" class="form-label w-full flex flex-col sm:flex-row">
+                            Durasi </label>
+                        <input id="durasi" type="number" name="durasi" class="form-control"
+                            placeholder="Masukkan Durasi..." required>
+                    </div>
+                    <div class="input-form mt-3">
+                        <label for="durasi" class="form-label">Status</label>
+                        <select data-placeholder="Pilih status..." class="tom-select w-full" id="durasi"
+                            name="durasi" multiple>
+                            <option value="active">Active</option>
+                            <option value="pending">Pending</option>
+                        </select>
+                    </div>
+                </form>
+                <div class="px-5 pb-8 text-center">
+                    <button type="button" data-tw-dismiss="modal"
+                        class="btn btn-outline-secondary w-24 mr-1">Batal</button>
+                    <button type="button" class="btn btn-primary w-24">Simpan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END: Edit Paket Modal -->

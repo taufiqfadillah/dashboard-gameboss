@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<!-- BEGIN: Head -->
+
+<head>
+    <meta charset="utf-8">
+    <link href="/dist/images/logo-white.ico" rel="shortcut icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Taufiqproject admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
+    <meta name="keywords"
+        content="admin template, Taufiqproject Admin Template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="LEFT4CODE">
+    <title><%= title %></title>
+    <!-- BEGIN: CSS Assets-->
+    <link rel="stylesheet" href="/dist/css/app.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <!-- END: CSS Assets-->
+    <style>
+        .content {
+            background-image: url(/dist/images/background.svg);
+            background-size: contain;
+            background-position: right;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<!-- END: Head -->
+<body class="py-5">
+    <div class="loader" id="loader">
+        <img src="/dist/images/logo-white.png" alt="Loader" />
+    </div>
+    <!-- Mobile Side Menu -->
+    <%- include('mobile-side-nav'); %>
+    <div id="main" class="flex mt-[4.7rem] md:mt-0" style="display: none;">
+        <!-- Side Menu -->
+        <%- include('side-nav'); %>
+        <div class="content">
+            <!-- Top Bar -->
+            <%- include('top-bar'); %>
+            <!-- Contents -->
+            <%- body %>
+        </div>
+    </div>
+    <!-- Toggle Dark Mode -->
+
+    <!-- BEGIN: JS Assets-->
+    <script
+        src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
+    <script src="/dist/js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+    </script>
+    <!-- END: JS Assets-->
+    <script>
+        $(document).ready(function () {
+          $('.edit-btn').on('click', function (event) {
+            event.preventDefault();
+            const itemId = $(this).data('id');
+      
+            $.ajax({
+              url: `/beranda-edit/${itemId}`,
+              method: 'GET',
+              success: function (data) {
+                $('#editid').val(data.editItem.id);
+                $('#editnama').val(data.editItem.nama);
+                $('#editunit').val(data.editItem.unit);
+                $('#editdurasi').val(data.editItem.durasi);
+                $('#editstatus').val(data.editItem.status);
+                $('#edit-data-modal').modal('show');
+              },
+              error: function (error) {
+                console.error('Error fetching data:', error.responseText);
+              }
+            });
+          });
+        });
+    </script>
+</body>
+
+</html>

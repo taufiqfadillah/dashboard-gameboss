@@ -1,0 +1,304 @@
+<!-- BEGIN: Form List -->
+<div class="intro-y flex items-center mt-8">
+    <h2 class="text-lg font-medium mr-auto">
+        Form Pembayaran
+    </h2>
+</div>
+<small class="intro-y">Selalu periksa waktu anda, Untuk memastikan kepuasan maksimal!</>
+    <div class="intro-y grid grid-cols-12 gap-6 mt-5">
+        <div class="intro-y col-span-12 lg:col-span-12">
+            <form action="/beranda" method="post">
+            <!-- BEGIN: Form Layout -->
+            <div class="intro-y box p-5 mb-10">
+                <div>
+                    <label for="nama" class="form-label">Nama</label>
+                    <input id="nama" name="nama" type="text" class="form-control w-full"
+                        placeholder="Masukkan Nama..." required>
+                </div>
+                <div class="mt-3">
+                    <label for="durasi" class="form-label">Durasi</label>
+                    <select data-placeholder="Pilih durasi permainan..." class="tom-select w-full"
+                        id="durasi" name="durasi" multiple required>
+                        <option value="1">1 Jam</option>
+                        <option value="2">2 Jam</option>
+                        <option value="3">3 Jam</option>
+                        <option value="4">4 Jam</option>
+                        <option value="5">Paket 5 Jam</option>
+                        <option value="6">Paket Begadang (6 jam)</option>
+                        <option value="12">Paket Gamers (12 jam)</option>
+                        <option value="24">Paket Sultan (24 jam)</option>
+                    </select>
+                </div>
+                <div class="mt-3">
+                    <label for="unit" class="form-label">Unit</label>
+                    <div class="input-group">
+                        <div class="input-group-text">TV</div>
+                        <select class="tom-select w-full"
+                        id="unit" name="unit" required>
+                        <option selected disabled hidden>Pilih unit tv...</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <label for="biaya" class="form-label">Biaya</label>
+                    <div class="input-group">
+                        <div class="input-group-text">Rp</div>
+                        <input id="biaya" name="biaya" type="text" class="form-control" placeholder="Biaya otomatis akan muncul..." aria-describedby="input-group-2" required>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <label>Setuju</label>
+                    <div class="form-switch mt-2">
+                        <input type="checkbox" class="form-check-input" required>
+                    </div>
+                </div>
+                <div class="text-right mt-5">
+                    <button type="button" class="btn btn-outline-secondary w-24 mr-1">Batalkan</button>
+                    <button type="submit" class="btn btn-primary w-24">Simpan</button>
+                </div>
+            </div>
+            <!-- END: Form Layout -->
+            </form>
+        </div>
+    </div>
+    <!-- END: Form List -->
+
+    <h2 class="intro-y text-lg font-medium mt-10">
+        Daftar Data Pengguna
+    </h2>
+    <div class="grid grid-cols-12 gap-6 mt-5">
+        <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
+            <div class="dropdown">
+                <button class="dropdown-toggle btn px-2 box" aria-expanded="false"
+                    data-tw-toggle="dropdown">
+                    <span class="w-5 h-5 flex items-center justify-center"> <i class="w-4 h-4"
+                            data-lucide="download"></i> </span>
+                </button>
+                <div class="dropdown-menu w-40">
+                    <ul class="dropdown-content">
+                        <li>
+                            <a href="" class="dropdown-item"> <i data-lucide="printer"
+                                    class="w-4 h-4 mr-2"></i> Print </a>
+                        </li>
+                        <li>
+                            <a href="" class="dropdown-item"> <i data-lucide="file-text"
+                                    class="w-4 h-4 mr-2"></i> Export to Excel </a>
+                        </li>
+                        <li>
+                            <a href="" class="dropdown-item"> <i data-lucide="file-text"
+                                    class="w-4 h-4 mr-2"></i> Export to PDF </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="hidden md:block mx-auto text-slate-500"></div>
+            <div class="w-full sm:w-auto mt-3 sm:mt-0 sm:ml-auto md:ml-0">
+                <div class="w-56 relative text-slate-500">
+                    <input type="text" class="form-control w-56 box pr-10" placeholder="Cari data...">
+                    <i class="w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0" data-lucide="search"></i>
+                </div>
+            </div>
+        </div>
+        <!-- BEGIN: Data List -->
+<div class="intro-y col-span-12 overflow-auto lg:overflow-visible">
+    <table class="table table-report -mt-2">
+        <thead>
+            <tr>
+                <th class="whitespace-nowrap">OPERATOR</th>
+                <th class="whitespace-nowrap">NAMA PENGGUNA</th>
+                <th class="text-center whitespace-nowrap">TV</th>
+                <th class="text-center whitespace-nowrap">DURASI</th>
+                <th class="text-center whitespace-nowrap">STATUS</th>
+                <th class="text-center whitespace-nowrap">ACTIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach(item => { %>
+              <tr class="intro-x">
+                <td>
+                  <a href="" class="font-medium whitespace-nowrap"><%= name %></a>
+                  <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5">Administrator</div>
+                </td>
+                <td>
+                  <a href="" class="font-medium whitespace-nowrap"><%= item.nama %></a>
+                </td>
+                <td class="text-center"><%= item.unit %></td>
+                <td class="text-center">
+                  <a href="" class="font-medium whitespace-nowrap">
+                    <% if (Array.isArray(item.durasi)) { %>
+                      <%= item.durasi.join(' Jam, ') %> Jam
+                    <% } else if (item.durasi > 1) { %>
+                      <%= item.durasi %> Jam
+                    <% } else { %>
+                      <%= item.durasi %> Jam
+                    <% } %>
+                  </a>
+                  <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5">02 : 00</div>
+                </td>                
+                <td class="w-40">
+                    <% if (item.status === 1) { %>
+                      <div class="flex items-center justify-center text-success">
+                        <i data-lucide="check-square" class="w-4 h-4 mr-2"></i> Active
+                      </div>
+                    <% } else { %>
+                      <div class="flex items-center justify-center text-warning">
+                        <i data-lucide="pause" class="w-4 h-4 mr-2"></i> Pending
+                      </div>
+                    <% } %>
+                </td>
+                <td class="table-report__action w-56">
+                  <div class="flex justify-center items-center">
+                    <a href="#" class="flex items-center mr-3 edit-btn" data-tw-toggle="modal" data-tw-target="#edit-data-modal" data-id="<%= item.id %>">
+                        <i data-lucide="check-square" class="w-4 h-4 mr-1"></i> Edit
+                    </a>
+                    <a class="flex items-center text-danger delete-btn" data-id="<%= item.id %>" data-tw-toggle="modal" data-tw-target="#delete-confirmation-modal" style="cursor: pointer;"> 
+                        <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete 
+                    </a>
+                  </div>
+                </td>
+              </tr>
+            <% }); %>
+        </tbody>          
+    </table>
+</div>
+<!-- END: Data List -->
+        <!-- BEGIN: Pagination -->
+        <div class="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center mb-10">
+            <nav class="w-full sm:w-auto sm:mr-auto">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#"> <i class="w-4 h-4" data-lucide="chevrons-left"></i>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#"> <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                        </a>
+                    </li>
+                    <li class="page-item"> <a class="page-link" href="#">...</a> </li>
+                    <li class="page-item active"> <a class="page-link" href="#">1</a> </li>
+                    <li class="page-item"> <a class="page-link" href="#">2</a> </li>
+                    <li class="page-item"> <a class="page-link" href="#">3</a> </li>
+                    <li class="page-item"> <a class="page-link" href="#">...</a> </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#"> <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#"> <i class="w-4 h-4" data-lucide="chevrons-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <select class="w-20 form-select box mt-3 sm:mt-0">
+                <option>10</option>
+                <option>25</option>
+                <option>35</option>
+                <option>50</option>
+            </select>
+        </div>
+        <!-- END: Pagination -->
+    </div>
+    <!-- BEGIN: Delete Confirmation Modal -->
+    <div id="delete-confirmation-modal" class="modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body p-0">
+              <div class="p-5 text-center">
+                <i data-lucide="x-circle" class="w-16 h-16 text-danger mx-auto mt-3"></i>
+                <div class="text-3xl mt-5">Are you sure?</div>
+                <div class="text-slate-500 mt-2">
+                  Do you really want to delete these records?
+                  <br>
+                  This process cannot be undone.
+                </div>
+              </div>
+              <div class="px-5 pb-8 text-center">
+                <button type="button" data-tw-dismiss="modal" class="btn btn-outline-secondary w-24 mr-1">Cancel</button>
+                <button type="button" id="confirm-delete-btn" class="btn btn-danger w-24">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- END: Delete Confirmation Modal -->
+    <!-- BEGIN: Edit Paket Modal -->
+    <div id="edit-data-modal" class="modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body p-0">
+                <form class="m-5 pt-5" action="/beranda-update" method="POST">
+                <div class="input-form">
+                <input type="hidden" name="id" id="editid" value="<%= editItem?.id %>">
+                  <label for="nama" class="form-label w-full flex flex-col sm:flex-row">Nama Pengguna</label>
+                  <input id="editnama" type="text" name="nama" class="form-control" minlength="2" required value="<%= editItem?.nama || '' %>">
+                </div>
+                <div class="input-form mt-3">
+                  <label for="unit" class="form-label w-full flex flex-col sm:flex-row">TV </label>
+                  <input id="editunit" type="text" name="unit" class="form-control" required value="<%= editItem?.unit || '' %>">
+                </div>
+                <div class="input-form mt-3">
+                  <label for="durasi" class="form-label w-full flex flex-col sm:flex-row">Durasi </label>
+                  <input id="editdurasi" type="text" name="durasi" class="form-control" required value="<%= editItem?.durasi || '' %>">
+                </div>
+                <div class="input-form mt-3">
+                  <label for="status" class="form-label">Status</label>
+                  <select data-placeholder="Pilih status..." class="tom-select w-full" id="editstatus" name="status">
+                    <% if (editItem?.status === 1) { %>
+                      <option value="1" selected>Active</option>
+                      <option value="0">Pending</option>
+                    <% } else if (editItem?.status === 0) { %>
+                      <option value="1">Active</option>
+                      <option value="0" selected>Pending</option>
+                    <% } else { %>
+                      <option value="1" selected>Active</option>
+                      <option value="0">Pending</option>
+                    <% } %>
+                  </select>                  
+                <div class="px-5 pb-8 pt-4 text-center">
+                  <button type="button" data-tw-dismiss="modal" class="btn btn-outline-secondary w-24 mr-1">Batal</button>
+                  <button type="submit" class="btn btn-primary w-24">Simpan</button>
+                </div>
+            </form>
+            </div>
+          </div>
+        </div>
+    </div>      
+    <!-- END: Edit Paket Modal -->
+
+    <script>
+        let itemId;
+        const deleteBtns = document.querySelectorAll('.delete-btn');
+        const confirmDeleteBtn = document.getElementById('confirm-delete-btn');
+        const deleteModal = document.getElementById('delete-confirmation-modal');
+      
+        deleteBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            itemId = this.getAttribute('data-id');
+          });
+        });
+      
+        confirmDeleteBtn.addEventListener('click', function() {
+          fetch(`/beranda-delete/${itemId}`, {
+            method: 'POST',
+          })
+          .then(response => {
+            if (response.ok) {
+              location.reload();
+            } else {
+              alert('Error deleting item');
+            }
+          });
+          deleteModal.setAttribute('aria-hidden', 'true');
+          deleteModal.classList.remove('show');
+        });
+    </script>

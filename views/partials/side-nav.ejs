@@ -1,0 +1,51 @@
+<!-- BEGIN: Side Menu -->
+<nav class="side-nav">
+    <a href="" class="intro-x flex items-center pt-4">
+        <img alt="Taufiqproject - HTML Admin Template" class="w-18 mt-2" src="/dist/images/header-logo.png">
+        <!-- <span class="hidden xl:block text-white text-lg ml-3"> Rubick </span> -->
+    </a>
+    <div class="side-nav__devider my-6"></div>
+    <ul>
+        <li>
+            <a href="/beranda" class="side-menu <%= activeRoute === '/beranda' ? 'side-menu--active' : '' %>">
+                <div class="side-menu__icon"> <i data-lucide="home"></i> </div>
+                <div class="side-menu__title">
+                    Beranda
+                    <div class="side-menu__sub-icon transform rotate-180"> </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="/profil" class="side-menu <%= activeRoute === '/profil' ? 'side-menu--active' : '' %>">
+                <div class="side-menu__icon"> <i data-lucide="user"></i> </div>
+                <div class="side-menu__title"> Profil </div>
+            </a>
+        </li>
+        <li>
+            <a href="/transaksi" class="side-menu <%= activeRoute === '/transaksi' ? 'side-menu--active' : '' %>">
+                <div class="side-menu__icon"> <i data-lucide="bar-chart-2"></i> </div>
+                <div class="side-menu__title"> Kelola Biaya </div>
+            </a>
+        </li>
+        <li>
+            <a href="/data-master" class="side-menu <%= activeRoute === '/data-master' ? 'side-menu--active' : '' %>">
+                <div class="side-menu__icon"> <i data-lucide="hard-drive"></i> </div>
+                <div class="side-menu__title"> Data Master </div>
+            </a>
+        </li>
+        <li>
+            <a href="/laporan" class="side-menu <%= activeRoute === '/laporan' ? 'side-menu--active' : '' %>">
+                <div class="side-menu__icon"> <i data-lucide="help-circle"></i> </div>
+                <div class="side-menu__title"> Laporan </div>
+            </a>
+        </li>
+        <div class="side-nav__devider my-6"></div>
+        <li class="fixed bottom-0 mb-10">
+            <a href="/auth/logout" class="side-menu">
+                <div class="side-menu__icon"> <i data-lucide="power"></i> </div>
+                <div class="side-menu__title"> Keluar </div>
+            </a>
+        </li>
+    </ul>
+</nav>
+<!-- END: Side Menu -->

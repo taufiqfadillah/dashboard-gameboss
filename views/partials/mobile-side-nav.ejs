@@ -1,0 +1,54 @@
+<!-- BEGIN: Mobile Menu -->
+<div class="mobile-menu md:hidden">
+    <div class="mobile-menu-bar">
+        <a href="" class="flex mr-auto">
+            <img alt="Taufiqproject - HTML Admin Template" class="w-6" src="/dist/images/logo-white.png">
+        </a>
+        <a href="javascript:;" class="mobile-menu-toggler"> <i data-lucide="bar-chart-2"
+                class="w-8 h-8 text-white transform -rotate-90"></i> </a>
+    </div>
+    <div class="scrollable">
+        <a href="javascript:;" class="mobile-menu-toggler"> <i data-lucide="x-circle"
+                class="w-8 h-8 text-white transform -rotate-90"></i> </a>
+        <ul class="scrollable__content py-2">
+            <li>
+                <a href="/beranda" class="menu <%= activeRoute === '/beranda' ? 'side-menu--active' : '' %>"">
+                    <div class="menu__icon"> <i data-lucide="home"></i> </div>
+                    <div class="menu__title"> Beranda </div>
+                </a>
+            </li>
+            <li>
+                <a href="/profil" class="menu <%= activeRoute === '/profil' ? 'side-menu--active' : '' %>"">
+                    <div class="menu__icon"> <i data-lucide="user"></i> </div>
+                    <div class="menu__title"> Profil</div>
+                </a>
+            </li>
+            <li>
+                <a href="/transaksi" class="menu <%= activeRoute === '/transaksi' ? 'side-menu--active' : '' %>"">
+                    <div class="menu__icon"> <i data-lucide="bar-chart-2"></i> </div>
+                    <div class="menu__title"> Kelola Biaya </div>
+                </a>
+            </li>
+            <li>
+                <a href="/data-master" class="menu <%= activeRoute === '/data-master' ? 'side-menu--active' : '' %>"">
+                    <div class="menu__icon"> <i data-lucide="hard-drive"></i> </div>
+                    <div class="menu__title"> Data Master </div>
+                </a>
+            </li>
+            <li>
+                <a href="/laporan" class="menu <%= activeRoute === '/laporan' ? 'side-menu--active' : '' %>"">
+                    <div class="menu__icon"> <i data-lucide="help-circle"></i> </div>
+                    <div class="menu__title"> Laporan </div>
+                </a>
+            </li>
+            <li class="menu__devider my-6"></li>
+            <li class="fixed bottom-0 mb-10">
+                <a href="login.html" class="menu">
+                    <div class="menu__icon"> <i data-lucide="power"></i> </div>
+                    <div class="menu__title"> Keluar </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- END: Mobile Menu -->
