@@ -6,7 +6,6 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const flash = require('connect-flash');
 const cookieParser = require('cookie-parser');
-const toastr = require('express-toastr');
 const bodyParser = require('body-parser');
 require('dotenv').config()
 
@@ -24,7 +23,8 @@ app.use(cookieParser(process.env.Secret_Key));
 app.use(session({
   secret: process.env.Secret_Key,
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
+  cookie: { maxAge: 24 * 60 * 60 * 1000 }
 }));
 
 app.use(passport.initialize());
@@ -62,9 +62,8 @@ passport.deserializeUser((user, done) => {
 });
 
 
-//------------ Flash & Toast Configuration ------------//
+//------------ Flash Configuration ------------//
 app.use(flash());
-app.use(toastr());
 
 
 //------------ Routes ------------//
