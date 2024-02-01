@@ -143,7 +143,7 @@
                       <%= item.durasi %> Jam
                     <% } %>
                   </a>
-                  <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5">02 : 00</div>
+                  <div id="countdown-<%= item.id %>" class="text-slate-500 text-xs whitespace-nowrap mt-0.5"></div>
                 </td>                
                 <td class="w-40">
                     <% if (item.status === 1) { %>
@@ -274,7 +274,12 @@
         </div>
     </div>      
     <!-- END: Edit Paket Modal -->
-
+    <script src="/dist/js/countdown.js"></script>
+    <script>
+        '<% data.forEach(item => { %>'
+          Countdown.addCountdown('<%= item.totalDurasi %>', 'countdown-<%= item.id %>');
+        '<% }); %>'
+    </script>
     <script>
         let itemId;
         const deleteBtns = document.querySelectorAll('.delete-btn');

@@ -45,16 +45,12 @@
     <!-- Toggle Dark Mode -->
 
     <!-- BEGIN: JS Assets-->
-    <script
-        src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
     <script src="/dist/js/app.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
       const socket = io();
     </script>
-    <!-- END: JS Assets-->
     <script>
         $(document).ready(function () {
           $('.edit-btn').on('click', function (event) {
@@ -79,6 +75,7 @@
           });
         });
     </script>
+    <!-- END: JS Assets-->
 </body>
 
 </html>

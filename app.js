@@ -23,13 +23,15 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(cookieParser(process.env.Secret_Key));
 app.use(session({
   secret: process.env.Secret_Key,
-  resave: true,
-  saveUninitialized: true
+  resave: false,
+  saveUninitialized: false
 }));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 //------------ Body Parser Configuration ------------//
 app.use(bodyParser.urlencoded({ extended: true }));
-
 
 //------------ Socket.io Configuration ------------//
 const { configureSocket } = require('./config/socket');
@@ -43,8 +45,8 @@ app.use(express.urlencoded({ extended: true }));
 
 passport.use(new LocalStrategy(
   (username, password, done) => {
-    if (username === process.env.Username || 'admin' && password === process.env.Password || 'admin123') {
-      return done(null, { username: 'admin', name: 'Ryan Paturahman' });
+    if ((username === process.env.Username || username === 'admin') && (password === process.env.Password || password === 'admin123')) {
+      return done(null, { username: 'admin', name: 'Ryan Paturahman', email: 'infogameboss@gmail.com' });
     } else {
       return done(null, false, { message: 'Incorrect username or password' });
     }
@@ -52,20 +54,17 @@ passport.use(new LocalStrategy(
 ));
 
 passport.serializeUser((user, done) => {
-  done(null, user.username);
+  done(null, user);
 });
 
-passport.deserializeUser((username, done) => {
-  done(null, { username: username, name: 'Ryan Paturahman' });
+passport.deserializeUser((user, done) => {
+  done(null, user);
 });
 
 
 //------------ Flash & Toast Configuration ------------//
 app.use(flash());
 app.use(toastr());
-
-app.use(passport.initialize());
-app.use(passport.session());
 
 
 //------------ Routes ------------//

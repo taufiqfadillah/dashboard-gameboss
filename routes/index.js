@@ -9,7 +9,6 @@ router.get('/', blockAccessToRoot, (req, res) => {
   res.redirect('/auth/login');
 });
 
-
 //------------ Middleware Side Nav Active ------------//
 router.use((req, res, next) => {
   res.locals.activeRoute = req.path;
@@ -25,8 +24,16 @@ router.get('/beranda', ensureAuthenticated, async (req, res) => {
     dataSnapshot.forEach(doc => {
       const item = doc.data();
       item.id = doc.id;
+    
+      if (Array.isArray(item.durasi)) {
+        item.totalDurasi = item.durasi.reduce((a, b) => (a + Number(b)), 0);
+      } else {
+        item.totalDurasi = Number(item.durasi);
+      }
+    
       data.push(item);
     });
+    
 
     res.render('contents/beranda', {
       title: 'Beranda || Gameboss',
