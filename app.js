@@ -34,11 +34,11 @@ app.use(passport.session());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //------------ Socket.io Configuration ------------//
-const { configureSocket } = require('./config/socket');
-const http = require('http');
-const server = http.createServer(app);
-const io = configureSocket(server);
-app.set('io', io);
+// const { configureSocket } = require('./config/socket');
+// const http = require('http');
+// const server = http.createServer(app);
+// const io = configureSocket(server);
+// app.set('io', io);
 
 //------------ Passport Configuration ------------//
 app.use(express.urlencoded({ extended: true }));
@@ -85,6 +85,6 @@ async function startServer() {
 startServer();
 
 
-server.listen(port, () => {
+app.listen(port, () => {
   console.log(`Server running to ${process.env.Base_URL}:${port}`)
 })
