@@ -23,8 +23,37 @@
   <body class="login">
     <%- body  %>
 
+    <%- include('toggle-darkmode'); %>
     <!-- BEGIN: JS Assets-->
-    <script src="/dist/js/app.js"></script>
+    <!-- <script src="/dist/js/app.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- END: JS Assets-->
-  </body>
+    <script> 
+    $(document).ready(function() {
+    if (localStorage.getItem('mode') === 'dark') {
+        $('html').removeClass('light');
+        $('html').addClass('dark');
+        $('.dark-mode-switcher__toggle').addClass("dark-mode-switcher__toggle--active");
+    } else {
+        $('html').removeClass('dark');
+        $('html').addClass('light');
+        $('.dark-mode-switcher__toggle').removeClass("dark-mode-switcher__toggle--active");
+    }
+
+    $('.dark-mode-switcher').click(function() {
+        let switcher = $(this).find(".dark-mode-switcher__toggle");
+        if ($(switcher).hasClass("dark-mode-switcher__toggle--active")) {
+            $(switcher).removeClass("dark-mode-switcher__toggle--active");
+            $('html').removeClass('dark');
+            $('html').addClass('light');
+            localStorage.setItem('mode', 'light');
+        } else {
+            $(switcher).addClass("dark-mode-switcher__toggle--active");
+            $('html').removeClass('light');
+            $('html').addClass('dark');
+            localStorage.setItem('mode', 'dark');
+        }
+    });
+  });
+  </script>
 </html>

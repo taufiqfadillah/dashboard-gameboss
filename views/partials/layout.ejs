@@ -14,7 +14,6 @@
     <title><%= title %></title>
     <!-- BEGIN: CSS Assets-->
     <link rel="stylesheet" href="/dist/css/app.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <!-- END: CSS Assets-->
     <style>
         .content {
@@ -40,17 +39,19 @@
             <%- include('top-bar'); %>
             <!-- Contents -->
             <%- body %>
-        </div>
+          </div>
+          <%- include('toggle-darkmode'); %>
     </div>
     <!-- Toggle Dark Mode -->
 
     <!-- BEGIN: JS Assets-->
     <script src="/dist/js/app.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
       const socket = io();
     </script>
+    <!-- Get Data Beranda -->
     <script>
         $(document).ready(function () {
           $('.edit-btn').on('click', function (event) {
@@ -75,7 +76,6 @@
           });
         });
     </script>
-    <!-- END: JS Assets-->
 </body>
 
 </html>

@@ -30,7 +30,7 @@ router.post('/login', passport.authenticate('local', {
 const oauth2Client = new google.auth.OAuth2(
   process.env.Google_Client_ID,
   process.env.Google_Secret_ID,
-  'http://localhost:3200/auth/google/callback'
+  `${process.env.Base_URL}:${process.env.PORT}/auth/google/callback`
 )
 
 const scope = [

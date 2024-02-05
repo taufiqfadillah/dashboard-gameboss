@@ -14,7 +14,7 @@ const port = process.env.PORT || 3200
 
 //------------ EJS Configuration ------------//
 app.use(expressLayouts);
-app.use('/dist', express.static(path.join(__dirname, 'views/dist')));
+app.use('/dist', express.static(path.join(__dirname, './views/dist')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
@@ -86,5 +86,5 @@ startServer();
 
 
 server.listen(port, () => {
-  console.log(`Server running to http://localhost:${port}`)
+  console.log(`Server running to ${process.env.Base_URL}:${port}`)
 })
